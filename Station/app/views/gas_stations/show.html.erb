@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @gas_station.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @gas_station.longitude %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gas_station.name %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @gas_station.brand %>
+</p>
+
+<%= link_to 'Edit', edit_gas_station_path(@gas_station) %> |
+<%= link_to 'Back', gas_stations_path %>
