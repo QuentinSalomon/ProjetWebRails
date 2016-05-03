@@ -2,18 +2,18 @@
 
 one:
   gas_station_id: 1
-  gas_types_id: 1
+  gas_type_id: 1
   price: 1.5
   date: 2016-05-03 14:17:29
 
 two:
   gas_station_id: 1
-  gas_types_id: 2
+  gas_type_id: 2
   price: 1.5
   date: 2016-05-03 14:17:29
 
 three:
   gas_station_id: 2
-  gas_types_id: 1
+  gas_type_id: 1
   price: 1.23
   date: 2016-05-02 12:23:45
