@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
           @user.roles << le_role
       end
     end
-    
+
     redirect_to users_path
   end
 

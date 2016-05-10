@@ -27,8 +27,21 @@
           <li> <a href="#">Vehicule</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><button class="btn navbar-btn btn-success"><a href="#">Login</a></button></li>
-          <li><button class="btn navbar-btn btn-success"><a href="#">Sign up</a></button></li>
+          <% if user_signed_in? %>
+            <li><button class="btn navbar-btn btn-success">
+              <%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
+            </button></li>
+            <li><button class="btn navbar-btn btn-success">
+              <%= link_to "Compte", edit_user_registration_path %>
+            </button></li>
+          <% elsif request.env['PATH_INFO']== '/users/sign_in' || request.env['PATH_INFO']== '/users/sign_up' %>
+            <li><button class="btn navbar-btn btn-success">
+              <%= link_to "Connexion", new_user_session_path %>
+            </button></li>
+            <li><button class="btn navbar-btn btn-success">
+              <%= link_to "Enregistrez-vous", new_user_registration_path %>
+            </button></li>
+          <% end %>
         </ul>
      </div>
    </div>
