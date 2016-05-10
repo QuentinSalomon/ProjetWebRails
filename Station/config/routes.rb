@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  resources :roles
+  devise_for :users
+  resources :users
   resources :gas_types
   resources :gas_stations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,16 +20,12 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  resources :users do
+    member do
+      put :save_roles
+      get :edit_roles
+    end
+  end
 
   # Example resource route with sub-resources:
   #   resources :products do
