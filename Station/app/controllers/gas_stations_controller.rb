@@ -15,10 +15,12 @@ class GasStationsController < ApplicationController
   # GET /gas_stations/new
   def new
     @gas_station = GasStation.new
+    @gas_types = GasType.all
   end
 
   # GET /gas_stations/1/edit
   def edit
+    @gas_types = GasType.all
   end
 
   # POST /gas_stations

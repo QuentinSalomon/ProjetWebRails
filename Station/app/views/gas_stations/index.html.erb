@@ -22,9 +22,7 @@
             <td><%= gas_station.longitude %></td>
             <td><%= gas_station.name %></td>
             <td><%= gas_station.brand %></td>
-            <% gas_station.gas_station_types.each do |item| %>
-              <td><%= item.gas_type.name %></td>
-            <% end %>
+            
             <td><%= link_to 'Show', gas_station %></td>
             <td><%= link_to 'Edit', edit_gas_station_path(gas_station) %></td>
             <td><%= link_to 'Destroy', gas_station, method: :delete, data: { confirm: 'Are you sure?' } %></td>

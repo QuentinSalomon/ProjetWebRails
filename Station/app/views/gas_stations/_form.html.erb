@@ -11,23 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
+  <div class="row">
+    <div class="field">
+      <%= f.label :latitude %><br>
+      <%= f.text_field :latitude %>
+    </div>
+    <div class="field">
+      <%= f.label :longitude %><br>
+      <%= f.text_field :longitude %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :brand %><br>
+      <%= f.text_field :brand %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <% @gas_types.each do |item| %>
+            <th><%= item.name %></th>
+          <% end %>
+        </tr>
+      </thead>
+          <% @gas_station.gas_station_types.each do |item| %>
+            <td><%= item.gas_type.name %></td>
+          <% end %>
+
+        <%= check_box_tag(:pet_dog) %>
+        <%= label_tag(:pet_dog, "I own a dog") %>
+      <tbody>
+
+      </tbody>
+
+    </table>
   </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
 <% end %>
