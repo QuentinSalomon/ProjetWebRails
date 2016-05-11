@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    authorize! :read, @user, :message => "Vous n'avez pas l'autorisation"
   end
 
   # GET /users/new
