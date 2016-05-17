@@ -20,7 +20,6 @@
       <%= f.label :longitude %><br>
       <%= f.text_field :longitude %>
     </div>
-
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -33,26 +32,30 @@
       <%= f.submit %>
     </div>
 
+    <% test = Array.wrap(nil) %>
     <table>
       <thead>
         <tr>
           <% @gas_types.each do |item| %>
             <th><%= item.name %></th>
+            <% test.append(item) %>
           <% end %>
         </tr>
       </thead>
-          <% @gas_station.gas_station_types.each do |item| %>
-            <td><%= item.gas_type.name %></td>
-          <% end %>
-
-        <%= check_box_tag(:pet_dog) %>
-        <%= label_tag(:pet_dog, "I own a dog") %>
       <tbody>
-
+        <% test.each do |head| %>
+        <% flag = false %>
+          <% @gas_station.gas_station_types.each do |item| %>
+            <% if head.id == item.gas_type.id %>
+              <% flag = true %>
+            <% end %>
+          <% end %>
+          <td>
+            <%= check_box_tag(head.name,head.id,flag) %>
+          </td>
+        <% end %>
       </tbody>
 
     </table>
   </div>
-
-
 <% end %>
