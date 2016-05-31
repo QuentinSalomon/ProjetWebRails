@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524133806) do
+ActiveRecord::Schema.define(version: 20160531122022) do
+
+  create_table "achat_essences", force: :cascade do |t|
+    t.float    "km_traveled",     limit: 24
+    t.float    "liters",          limit: 24
+    t.float    "price_per_liter", limit: 24
+    t.integer  "vehicul_id",      limit: 4
+    t.integer  "gas_station_id",  limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "achat_essences", ["gas_station_id"], name: "fk_rails_73c7274bc8", using: :btree
+  add_index "achat_essences", ["vehicul_id"], name: "fk_rails_d8bfb8da21", using: :btree
+>>>>>>> dev
 
   create_table "gas_station_types", force: :cascade do |t|
     t.integer  "gas_station_id", limit: 4
@@ -78,4 +92,9 @@ ActiveRecord::Schema.define(version: 20160524133806) do
     t.datetime "updated_at",             null: false
   end
 
+<<<<<<< HEAD
+=======
+  add_foreign_key "achat_essences", "gas_stations"
+  add_foreign_key "achat_essences", "vehiculs"
+>>>>>>> dev
 end
