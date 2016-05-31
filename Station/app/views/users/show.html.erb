@@ -15,5 +15,12 @@
   <%= @user.email %>
 </p>
 
+<% if can? :manage, User %>
+  <p>
+    <b>Rôles:</b>
+    <%= @user.roles_as_text %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
