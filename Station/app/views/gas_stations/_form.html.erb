@@ -28,9 +28,6 @@
       <%= f.label :brand %><br>
       <%= f.text_field :brand %>
     </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
 
     <% test = Array.wrap(nil) %>
     <table>
@@ -51,11 +48,15 @@
             <% end %>
           <% end %>
           <td>
-            <%= check_box_tag(head.name,head.id,flag) %>
+            <%= check_box_tag("gas_station_types[gas_ids][]",head.id,flag) %>
           </td>
         <% end %>
       </tbody>
-
     </table>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
   </div>
 <% end %>

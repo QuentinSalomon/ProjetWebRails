@@ -44,6 +44,23 @@ class GasStationsController < ApplicationController
   def update
     respond_to do |format|
       if @gas_station.update(gas_station_params)
+        if params[:gas_station_types] != nil
+          @gas_station.gas_station_types.each do |item|
+            if params[:gas_station_types]['gas_ids'].find(item.gas_type_id)
+              item.destroy
+            end
+          end
+          params[:gas_station_types]['gas_ids'].each do |item|
+            if !@gas_station.gas_station_types.exists?(['gas_type_id = ' "#{item}"])
+              GasStationType.new(gas_station_id: @gas_station.id, gas_type_id: item).save
+            end
+          end
+        else
+          @gas_station.gas_station_types.each do |item|
+            item.destroy
+          end
+        end
+
         format.html { redirect_to @gas_station, notice: 'Gas station was successfully updated.' }
         format.json { render :show, status: :ok, location: @gas_station }
       else
