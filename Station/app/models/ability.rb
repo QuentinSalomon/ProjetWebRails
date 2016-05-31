@@ -22,8 +22,5 @@ class Ability
     if user.has_role?(:user)
       can :read, :all
     end
-
-#can :read, :all
-#can :manage, :all
   end
 end

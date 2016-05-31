@@ -1,4 +1,5 @@
 class AchatEssencesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_achat_essence, only: [:show, :edit, :update, :destroy]
 
   # GET /achat_essences

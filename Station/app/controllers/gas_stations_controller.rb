@@ -21,6 +21,7 @@ class GasStationsController < ApplicationController
   # GET /gas_stations/1/edit
   def edit
     @gas_types = GasType.all
+    authorize! :manage, @user, :message => "Vous n'avez pas l'autorisation"
   end
 
   # POST /gas_stations
