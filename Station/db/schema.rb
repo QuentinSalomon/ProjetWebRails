@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160531122022) do
 
   add_index "achat_essences", ["gas_station_id"], name: "fk_rails_73c7274bc8", using: :btree
   add_index "achat_essences", ["vehicul_id"], name: "fk_rails_d8bfb8da21", using: :btree
->>>>>>> dev
 
   create_table "gas_station_types", force: :cascade do |t|
     t.integer  "gas_station_id", limit: 4
@@ -92,9 +91,6 @@ ActiveRecord::Schema.define(version: 20160531122022) do
     t.datetime "updated_at",             null: false
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "achat_essences", "gas_stations"
   add_foreign_key "achat_essences", "vehiculs"
->>>>>>> dev
 end
