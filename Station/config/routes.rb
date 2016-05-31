@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :achat_essences
   resources :vehiculs
   resources :roles
   devise_for :users
