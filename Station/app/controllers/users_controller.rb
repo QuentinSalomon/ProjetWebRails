@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource :except => :index
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    authorize! :manage, @user, :message => "Vous n'avez pas l'autorisation"
   end
 
 

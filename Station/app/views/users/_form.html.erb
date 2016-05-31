@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
     <%= f.label :nom %><br>
     <%= f.text_field :nom %>
   </div>
@@ -19,10 +23,8 @@
     <%= f.label :prenom %><br>
     <%= f.text_field :prenom %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
+
+  <%= link_to 'Changer de mot de passe', edit_user_registration_path %><br><br>
   <div class="actions">
     <%= f.submit %>
   </div>
