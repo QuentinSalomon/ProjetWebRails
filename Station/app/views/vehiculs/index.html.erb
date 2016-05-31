@@ -16,16 +16,18 @@
 
   <tbody>
     <% @vehiculs.each do |vehicul| %>
-      <tr>
-        <td><%= vehicul.name %></td>
-        <td><%= vehicul.brand %></td>
-        <td><%= vehicul.category %></td>
-        <td><%= vehicul.km %></td>
-        <td><%= vehicul.user_id %></td>
-        <td><%= link_to 'Show', vehicul %></td>
-        <td><%= link_to 'Edit', edit_vehicul_path(vehicul) %></td>
-        <td><%= link_to 'Destroy', vehicul, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if current_user.id == vehicul.user_id %>
+        <tr>
+          <td><%= vehicul.name %></td>
+          <td><%= vehicul.brand %></td>
+          <td><%= vehicul.category %></td>
+          <td><%= vehicul.km %></td>
+          <td><%= vehicul.user_id %></td>
+          <td><%= link_to 'Show', vehicul %></td>
+          <td><%= link_to 'Edit', edit_vehicul_path(vehicul) %></td>
+          <td><%= link_to 'Destroy', vehicul, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
