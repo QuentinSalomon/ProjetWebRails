@@ -26,6 +26,9 @@
     <%= item.gas_type.name %><br>
   <% end %>
 </p>
-
-<%= link_to 'Edit', edit_gas_station_path(@gas_station) %> |
+<% if current_user != nil %>
+  <% if current_user.has_role?(:admin) %>
+    <%= link_to 'Edit', edit_gas_station_path(@gas_station) %> |
+  <% end %>
+<% end %>
 <%= link_to 'Back', gas_stations_path %>

@@ -32,9 +32,11 @@
         <% end %>
       </tbody>
     </table>
-
-    <br>
-
-    <%= link_to 'New Gas station', new_gas_station_path %>
+    <% if current_user != nil %>
+      <% if current_user.has_role?(:admin) %>
+        <br>
+        <%= link_to 'New Gas station', new_gas_station_path %>
+      <% end %>
+    <% end %>
   </div>
 </div>
