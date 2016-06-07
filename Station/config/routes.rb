@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
   resources :vehiculs
   resources :roles
@@ -8,11 +7,12 @@ Rails.application.routes.draw do
   resources :gas_types
   resources :gas_stations
   resources :achat_essences
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'homes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     member do
       put :save_roles
       get :edit_roles
+    end
+  end
+
+  resources :homes do
+    collection do
+        get :find
     end
   end
 
