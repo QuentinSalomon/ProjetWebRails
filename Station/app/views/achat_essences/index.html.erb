@@ -16,20 +16,22 @@
 
   <tbody>
     <% @achat_essences.each do |achat_essence| %>
-      <tr>
-        <td><%= achat_essence.km_traveled %></td>
-        <td><%= achat_essence.liters %></td>
-        <td><%= achat_essence.price_per_liter %></td>
-        <td><%= achat_essence.vehicul_id %></td>
-        <td><%= achat_essence.gas_station_id %></td>
-        <td><%= link_to 'Show', achat_essence %></td>
-        <td><%= link_to 'Edit', edit_achat_essence_path(achat_essence) %></td>
-        <td><%= link_to 'Destroy', achat_essence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if achat_essence.vehicul_id == params[:vehicul_id].to_i %>
+        <tr>
+          <td><%= achat_essence.km_traveled %></td>
+          <td><%= achat_essence.liters %></td>
+          <td><%= achat_essence.price_per_liter %></td>
+          <td><%= achat_essence.vehicul_id %></td>
+          <td><%= achat_essence.gas_station_id %></td>
+          <td><%= link_to 'Show', achat_essence %></td>
+          <td><%= link_to 'Edit', edit_achat_essence_path(achat_essence) %></td>
+          <td><%= link_to 'Destroy', achat_essence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Achat essence', new_achat_essence_path %>
+<%= link_to 'New Achat essence', new_achat_essence_path(:vehicul_id => params[:vehicul_id]) %>

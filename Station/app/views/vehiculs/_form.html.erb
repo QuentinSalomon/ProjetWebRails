@@ -27,9 +27,9 @@
     <%= f.label :km %><br>
     <%= f.text_field :km %>
   </div>
-  <div class="field">
+  <div class="field" style="display: none;">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

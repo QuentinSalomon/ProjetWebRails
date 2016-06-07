@@ -6,6 +6,7 @@ one:
   category: voiture de compète
   km: 150.2
   user_id: 2
+  id: 1
 
 two:
   name: Quentin mobile
@@ -13,3 +14,4 @@ two:
   category: fusée
   km: 90.4
   user_id: 1
+  id: 2
