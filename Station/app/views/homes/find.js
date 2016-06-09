@@ -1,4 +1,6 @@
 $("#result").text("");
-<% @research.each do |r| %>
-  $("#result").append("<%= r.name %>");
-<%end%>
+
+$("#result").append("<%= escape_javascript(render partial: 'station', locals: {stations: @research}) %>")
+
+
+//

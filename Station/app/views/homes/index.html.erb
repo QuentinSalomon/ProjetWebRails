@@ -5,18 +5,17 @@
       <h1>Stations</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-8">
-      <div class="form-group">
-        <%= form_tag find_homes_path, :remote => true, :method => :get do %>
-            <%= text_field_tag("research",nil, placeholder: 'Enter search term...') %>
-          <%= submit_tag "Mettre a jour" %>
-        <% end %>
-      </div>
-    </div>
 
-    <div id="result">
-
-    </div>
+  <%= form_tag find_homes_path, :remote => true, :method => :get do %>
+  <div class="form-group">
+      <%= text_field_tag("researchtext",nil, {placeholder: 'Enter search term...', class: 'form-control'}) %> <br>
+  </div>
+  <div class="form-actions">
+      <%= submit_tag("Search",{class: 'btn btn-primary'}) %>
+  </div>
+  <% end %>
+  </div>
+  <br>
+  <div id="result">
   </div>
 </div>
