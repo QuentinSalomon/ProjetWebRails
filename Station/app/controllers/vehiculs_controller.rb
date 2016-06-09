@@ -16,6 +16,7 @@ class VehiculsController < ApplicationController
   # GET /vehiculs/new
   def new
     @vehicul = Vehicul.new
+    @vehicul.user_id = current_user.id
   end
 
   # GET /vehiculs/1/edit

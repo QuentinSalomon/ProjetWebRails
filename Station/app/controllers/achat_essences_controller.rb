@@ -16,6 +16,7 @@ class AchatEssencesController < ApplicationController
   # GET /achat_essences/new
   def new
     @achat_essence = AchatEssence.new
+    @achat_essence.vehicul_id = params[:vehicul_id]
   end
 
   # GET /achat_essences/1/edit
@@ -29,6 +30,8 @@ class AchatEssencesController < ApplicationController
 
     respond_to do |format|
       if @achat_essence.save
+        #gas_station_type = GasStationType.where(:gas_station_id=>@achat_essence.gas_station_id).where(:gas_type_id=>@achat_essence.gas_type_id)
+        #gas_station_type.price = @achat_essence.price_per_liter
         format.html { redirect_to @achat_essence, notice: 'Achat essence was successfully created.' }
         format.json { render :show, status: :created, location: @achat_essence }
       else
@@ -55,9 +58,10 @@ class AchatEssencesController < ApplicationController
   # DELETE /achat_essences/1
   # DELETE /achat_essences/1.json
   def destroy
+    vehicul_id = @achat_essence.vehicul_id
     @achat_essence.destroy
     respond_to do |format|
-      format.html { redirect_to achat_essences_url, notice: 'Achat essence was successfully destroyed.' }
+      format.html { redirect_to achat_essences_path(:vehicul_id => vehicul_id), notice: 'Achat essence was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
