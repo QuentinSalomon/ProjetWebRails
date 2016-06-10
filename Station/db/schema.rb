@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531122022) do
+ActiveRecord::Schema.define(version: 20160610105027) do
 
   create_table "achat_essences", force: :cascade do |t|
     t.float    "km_traveled",     limit: 24
@@ -82,14 +82,17 @@ ActiveRecord::Schema.define(version: 20160531122022) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vehiculs", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "brand",      limit: 255
-    t.string   "category",   limit: 255
-    t.float    "km",         limit: 24
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.string   "brand",       limit: 255
+    t.string   "category",    limit: 255
+    t.float    "km",          limit: 24
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "gas_type_id", limit: 4
   end
+
+  add_index "vehiculs", ["gas_type_id"], name: "index_vehiculs_on_gas_type_id", using: :btree
 
   add_foreign_key "achat_essences", "gas_stations"
   add_foreign_key "achat_essences", "vehiculs"
