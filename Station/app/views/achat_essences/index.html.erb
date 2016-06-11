@@ -21,8 +21,10 @@
           <td><%= achat_essence.km_traveled %></td>
           <td><%= achat_essence.liters %></td>
           <td><%= achat_essence.price_per_liter %></td>
-          <td><%= achat_essence.vehicul_id %></td>
-          <td><%= achat_essence.gas_station_id %></td>
+          <% vehicul = Vehicul.find(achat_essence.vehicul_id) %>
+          <% gas_station = GasStation.find(achat_essence.gas_station_id) %>
+          <td><%= link_to vehicul.name, vehicul_path(vehicul.id) %></td>
+          <td><%= link_to gas_station.brand, gas_station_path(gas_station.id) %></td>
           <td><%= link_to 'Show', achat_essence %></td>
           <td><%= link_to 'Edit', edit_achat_essence_path(achat_essence) %></td>
           <td><%= link_to 'Destroy', achat_essence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
