@@ -2,9 +2,16 @@
 <div class="container">
   <% stations.each do |station| %>
     <div class="row">
-      <p> Name : <%= station.name %> <br>
-          Brand : <%= station.brand %> <br>
-      </p>
+      <div class="col-md-4 col-md-offset-4 ">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+             <h3 class="panel-title"><%= station.name %></h3>
+          </div>
+          <div class="panel-body">
+             Fournisseur : <%= station.brand %>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

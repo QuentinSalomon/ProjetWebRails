@@ -15,3 +15,34 @@
   margin: 0;
   text-align: center;
 }
+
+.panel-default
+{
+  background-color: #828793 !important;
+  height: 150px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,.5);
+}
+
+.panel{
+  border: 1px solid #828793;
+  color: #ffffff !important;
+  border-radius: 0;
+  transition: box-shadow 0.4s;
+}
+
+.panel-heading{
+  background-color: #143D64 !important;
+  color: #ffffff !important;
+  border: hidden;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 4px 4px -2px #232323;
+  box-shadow: 0px 4px 4px -2px #232323;
+}
+
+.panel-title{
+  text-align: center;
+}
+
+.result-hidden{
+  display: none;
+}
