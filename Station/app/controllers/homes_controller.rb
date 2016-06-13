@@ -7,7 +7,7 @@ class HomesController < ApplicationController
     @gas_stations = GasStation.all
     @research = Array.wrap(nil)
     @gas_stations.each do |station|
-      if station.name.to_s.downcase.include? (@searchText.to_s.downcase)
+      if station.name.to_s.downcase.include? (@searchText.to_s.downcase) or station.brand.to_s.downcase.include? (@searchText.to_s.downcase)
         @research.append(station)
         puts(station.name)
       end
