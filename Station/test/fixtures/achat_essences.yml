@@ -13,3 +13,10 @@ two:
   price_per_liter: 1.53
   vehicul_id: 2
   gas_station_id: 1
+
+three:
+  km_traveled: 155.6
+  liters: 12
+  price_per_liter: 1.53
+  vehicul_id: 1
+  gas_station_id: 3

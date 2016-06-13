@@ -17,3 +17,9 @@ three:
   gas_type_id: 1
   price: 1.23
   date: 2016-05-02 12:23:45
+
+four:
+  gas_station_id: 3
+  gas_type_id: 1
+  price: 1.22
+  date: 2016-05-02 12:23:45

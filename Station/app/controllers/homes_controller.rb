@@ -12,7 +12,6 @@ class HomesController < ApplicationController
         puts(station.name)
       end
     end
-
     respond_to do |format|
       format.js
       format.html
