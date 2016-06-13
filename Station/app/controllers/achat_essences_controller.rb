@@ -32,8 +32,13 @@ class AchatEssencesController < ApplicationController
       if @achat_essence.save
         vehicul = Vehicul.find(@achat_essence.vehicul_id)
         gas_station_type_tmp = GasStationType.find_by("gas_station_id = ? AND gas_type_id = ?", @achat_essence.gas_station_id, vehicul.gas_type_id)
-        attributes = {:price => @achat_essence.price_per_liter, :date => DateTime.now}
-        gas_station_type_tmp.update_attributes(attributes)
+        if(gas_station_type_tmp != nil)
+          attributes = {:price => @achat_essence.price_per_liter, :date => DateTime.now}
+          gas_station_type_tmp.update_attributes(attributes)
+        else
+          parameters = {:gas_station_id => @achat_essence.gas_station_id, :gas_type_id => vehicul.gas_type_id, :price => @achat_essence.price_per_liter, :date => DateTime.now}
+          GasStationType.new(parameters).save
+        end
         format.html { redirect_to @achat_essence, notice: 'Achat essence was successfully created.' }
         format.json { render :show, status: :created, location: @achat_essence }
       else

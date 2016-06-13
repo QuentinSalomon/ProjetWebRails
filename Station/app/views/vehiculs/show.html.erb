@@ -23,9 +23,10 @@
       <%= @vehicul.km %>
     </p>
 
+    <% essence = GasType.find(@vehicul.gas_type_id) %>
     <p>
-      <strong>User:</strong>
-      <%= @vehicul.user_id %>
+      <strong>Essence:</strong>
+      <%= essence.name %>
     </p>
 
     <%= link_to 'Edit', edit_vehicul_path(@vehicul) %> |
