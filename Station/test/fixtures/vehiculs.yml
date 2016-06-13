@@ -10,10 +10,10 @@ one:
   gas_type_id: 1
 
 two:
-  name: Quentin mobile
-  brand: fiat
-  category: fusée
-  km: 90.4
+  name: Panda
+  brand: Fiat
+  category: Voiture
+  km: 560.4
   user_id: 1
   id: 2
   gas_type_id: 2
