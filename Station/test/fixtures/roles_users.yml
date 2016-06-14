@@ -4,3 +4,6 @@ one:
 two:
   role_id: 2
   user_id: 1
+one:
+  role_id: 2
+  user_id: 2

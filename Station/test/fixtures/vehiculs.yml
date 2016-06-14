@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Luc mobile
+  name: benz
   brand: merco
-  category: voiture de compète
+  category: Voiture
   km: 150.2
   user_id: 2
   id: 1
@@ -17,3 +17,12 @@ two:
   user_id: 1
   id: 2
   gas_type_id: 2
+
+three:
+  name: focus
+  brand: ford
+  category: Voiture
+  km: 270.7
+  user_id: 1
+  id: 3
+  gas_type_id: 4
