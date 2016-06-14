@@ -13,13 +13,43 @@ two:
   date: 2016-05-03 14:17:29
 
 three:
-  gas_station_id: 2
-  gas_type_id: 1
+  gas_station_id: 1
+  gas_type_id: 3
   price: 1.23
   date: 2016-05-02 12:23:45
 
 four:
+  gas_station_id: 2
+  gas_type_id: 4
+  price: 1.22
+  date: 2016-05-02 12:23:45
+
+five:
+  gas_station_id: 2
+  gas_type_id: 2
+  price: 1.5
+  date: 2016-05-03 14:17:29
+
+six:
   gas_station_id: 3
   gas_type_id: 1
+  price: 1.5
+  date: 2016-05-03 14:17:29
+
+seven:
+  gas_station_id: 3
+  gas_type_id: 3
+  price: 1.23
+  date: 2016-05-02 12:23:45
+
+eight:
+  gas_station_id: 4
+  gas_type_id: 1
+  price: 1.22
+  date: 2016-05-02 12:23:45
+
+nine:
+  gas_station_id: 4
+  gas_type_id: 4
   price: 1.22
   date: 2016-05-02 12:23:45
